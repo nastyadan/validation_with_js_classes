@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    //(/^[\d\+][\d\(\)\ -]{4,14}\d$/)
+    class Validation1 {
+        constructor(telephon, date, email, domain) {
+            this.telephon = telephon;
+            this.date = date;
+            this.email = emai;
+            this.domain = domain;
+        }
+
+        static checkTelephone(telephon) {
+            let valid = false;
+            if (telephon.match(/^[\d\+][\d\(\)\ -]{4,14}\d$/)) {
+                valid = true;
+            }
+            return valid;
+
+        }
+        static checkDate(date) {
+            let valid = false;
+            if (date.match(/(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/)) {
+                valid = true;
+            }
+            return valid;
+
+        }
+        //match(/(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/)
+        static checkEmail(email) {
+            let valid = false;
+            if (email.match(/^[\w]{1}[\w-\.]*@[\w-]+\.[a-z]{2,4}$/)) {
+                valid = true;
+            }
+            return valid;
+
+        }
+        //.match(/^[\w]{1}[\w-\.]*@[\w-]+\.[a-z]{2,4}$/)
+        static checkDomain(domain) {
+            let valid = false;
+            if (domain.match(/^(?:[-A-Za-z0-9]+\.)+[A-Za-z]{2,6}$/)) {
+                valid = true;
+            }
+            return valid;
+            //match(/^(?:[-A-Za-z0-9]+\.)+[A-Za-z]{2,6}$/)
+        }
+    }
+    console.log(Validation1.checkTelephone('+7(910)123-45-67'));
+    console.log(Validation1.checkDomain('itgirlschool.ru'));
+    console.log(Validation1.checkDate('12.05.2021'));
+    console.log(Validation1.checkEmail('alisa@mail.ru'));
+
+    class Validation2 {
+        constructor(telephon, date, email, domain) {
+            this.telephon = telephon;
+            this.date = date;
+            this.email = email;
+            this.domain = domain;
+        }
+
+        checkTelephone(telephon) {
+            let valid = false;
+            if (telephon.match(/^[\d\+][\d\(\)\ -]{4,14}\d$/)) {
+                valid = true;
+            }
+            return valid;
+
+        }
+        checkDate(date) {
+            let valid = false;
+            if (date.match(/(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/)) {
+                valid = true;
+            }
+            return valid;
+
+        }
+        //match(/(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/)
+        checkEmail(email) {
+            let valid = false;
+            if (email.match(/^[\w]{1}[\w-\.]*@[\w-]+\.[a-z]{2,4}$/)) {
+                valid = true;
+            }
+            return valid;
+
+        }
+        //.match(/^[\w]{1}[\w-\.]*@[\w-]+\.[a-z]{2,4}$/)
+        checkDomain(domain) {
+            let valid = false;
+            if (domain.match(/^(?:[-A-Za-z0-9]+\.)+[A-Za-z]{2,6}$/)) {
+                valid = true;
+            }
+            return valid;
+            //match(/^(?:[-A-Za-z0-9]+\.)+[A-Za-z]{2,6}$/)
+        }
+    }
+    var validator = new Validation2();
+    console.log(validator.checkEmail('alisa@mail.ru'));
+    console.log(validator.checkDomain('itgirlschool.ru'));
+    console.log(validator.checkDate('12.05.2021'));
+    console.log(validator.checkTelephone('+7(910)123-45-67'));
+</script>
+</body>
+
+</html>
